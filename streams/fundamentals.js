@@ -20,7 +20,6 @@ class OneToHundredStream extends Readable {
 
 class NumberToNegativeStream extends Transform {
   _transform(chunk, encoding, callback) {
-    console.log(typeof chunk.toString())
     const transformed = Number(chunk.toString()) * -1
     
     callback(null, Buffer.from(String(transformed)))
